@@ -1,32 +1,40 @@
 <?php
 
 namespace App\Entity;
+
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity()
- * @ORM\Table(name="formations")
+ * @ORM\Entity(repositoryClass="App\Repository\FormationsRepository")
  */
-class formations {
+class Formations
+{
     /**
      * @ORM\Id()
-     * @ORM\GeneratedValue (strategy="AUTO")
+     * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
      */
-    public $id;
+    private $id;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", length=255)
      */
-    public $nom;
+    private $nom;
 
-    /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Filieres", mappedBy="customer")
-     */
-    public $filiere;
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Semaine_formation")
-     */
-    public $semaine_formation;
+    public function getNom(): ?string
+    {
+        return $this->nom;
+    }
+
+    public function setNom(string $nom): self
+    {
+        $this->nom = $nom;
+
+        return $this;
+    }
 }
