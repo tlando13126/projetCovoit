@@ -1,0 +1,31 @@
+<?php //%255BApp%255CEntity%255CFormations%2524id%255D%255B1%255D
+
+namespace Symfony\Component\VarExporter\Internal;
+
+return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
+    $o = [
+        clone (($p = &Registry::$prototypes)['Doctrine\\ORM\\Mapping\\GeneratedValue'] ?? Registry::p('Doctrine\\ORM\\Mapping\\GeneratedValue')),
+        clone ($p['Doctrine\\ORM\\Mapping\\Column'] ?? Registry::p('Doctrine\\ORM\\Mapping\\Column')),
+        clone ($p['Doctrine\\ORM\\Mapping\\OneToMany'] ?? Registry::p('Doctrine\\ORM\\Mapping\\OneToMany')),
+        clone $p['Doctrine\\ORM\\Mapping\\OneToMany'],
+    ],
+    null,
+    [
+        'stdClass' => [
+            'type' => [
+                1 => 'integer',
+            ],
+            'targetEntity' => [
+                2 => 'App\\Entity\\Semaine_formation',
+                'App\\Entity\\Filieres',
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+        $o[2],
+        $o[3],
+    ],
+    []
+);

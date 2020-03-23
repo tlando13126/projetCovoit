@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Trajets</title>
+		<meta name="viewport" content="initial-scale=1.0">
+		<meta charset="utf-8">
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+		<link href="{{ asset('moncss.css') }}" rel="stylesheet">
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+
+	</head>
+	<body>
+		<center><img class="logo_accueil" src="{{ asset('images/logo.png') }}"/></center>
+		{# /templates/hello.html.twig #}
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<div class="collapse navbar-collapse" id="navFavoris">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="{{ path('favoris') }}">Favoris
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+
+				</ul>
+			</div>
+			<div class="collapse navbar-collapse" id="navFavoris">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="{{ path('monCompte') }}">Mon compte
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="collapse navbar-collapse" id="navFavoris">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="{#{{ path('deconnexion') }}#}">Se déconnecter
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<center><a href="#" class="btn btn-primary btn-lg disabled" role="button" aria-disabled="true">Proposer un covoiturage</a></center>
+		<table>
+			<table class="table">
+				<thead class="thead-light">
+					<tr>
+						<th scope="col">ID</th>
+						<th scope="col">Nom</th>
+						<th scope="col">Prenom</th>
+						<th scope="col">Section</th>
+						<th scope="col">Départ</th>
+						<th scope="col">Arrivée</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<th scope="row">1</th>
+						<td>Mark</td>
+						<td>Otto</td>
+						<td>SLAM</td>
+						<td>Pertuis</td>
+						<td>Avigon</td>
+					</tr>
+					<tr>
+						<th scope="row">2</th>
+						<td>Jacob</td>
+						<td>Thornton</td>
+						<td>SLAM</td>
+						<td>Pertuis</td>
+						<td>Avigon</td>
+					</tr>
+					<tr>
+						<th scope="row">3</th>
+						<td>Larry</td>
+						<td>the Bird</td>
+						<td>SLAM</td>
+						<td>Pertuis</td>
+						<td>Avigon</td>
+					</tr>
+				</tbody>
+			</table>
+		</body>
+	</body>
+</html>
