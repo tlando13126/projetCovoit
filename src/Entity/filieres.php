@@ -43,4 +43,18 @@ class Filieres
 
         return $this;
     }
+
+    public function getNomUser(): ?string
+    {
+        return $this->nomUser;
+    }
+
+    public function setNomUser(string $nomUser): self
+    {
+        $this->nomUser = $nomUser;
+
+        return $this;
+    }
 }
+
+
