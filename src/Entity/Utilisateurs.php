@@ -13,6 +13,8 @@ class Utilisateurs
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @ORM\OneToMany(targetEntity="App\Entity\UtilisateursTrajets", mappedBy="Utilisateurs")
+     * @ORM\OneToOne(targetEntity="App\Entity\Voitures", mappedBy="Utilisateurs")
      */
     private $id;
 

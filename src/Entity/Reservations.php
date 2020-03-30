@@ -17,6 +17,12 @@ class Reservations
     private $id;
 
     /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Voitures", inversedBy="Reservations")
+     * @ORM\Column(type="integer")
+     */
+    private $idVoiture;
+
+    /**
      * @ORM\Column(type="datetime")
      */
     private $dateDebut;
@@ -29,6 +35,18 @@ class Reservations
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getIdVoiture(): ?\DateTimeInterface
+    {
+        return $this->idVoiture;
+    }
+
+    public function setIdVoiture(\DateTimeInterface $idVoiture): self
+    {
+        $this->idVoiture = $idVoiture;
+
+        return $this;
     }
 
     public function getDateDebut(): ?\DateTimeInterface

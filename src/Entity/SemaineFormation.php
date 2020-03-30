@@ -18,6 +18,7 @@ class SemaineFormation
 
     /**
      * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity="App\Entity\formations", inversedBy="SemaineFormation")
      */
     private $semaine;
 

@@ -13,6 +13,8 @@ class Voitures
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @ORM\OneToOne(targetEntity="App\Entity\Utilisateurs", inversedBy="Voitures")
+     * @ORM\OneToOne(targetEntity="App\Entity\Reservations", mappedBy="Voitures")
      */
     private $id;
 

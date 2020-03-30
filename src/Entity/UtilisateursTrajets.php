@@ -17,6 +17,12 @@ class UtilisateursTrajets
     private $id;
 
     /**
+     * @ORM\Column(type="integer")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Utilisateurs", inversedBy="UtilisateursTrajets")
+     */
+    private $idUser;
+
+    /**
      * @ORM\Column(type="string", length=255)
      */
     private $depart;
@@ -29,6 +35,18 @@ class UtilisateursTrajets
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getIdUsert(): ?string
+    {
+        return $this->idUser;
+    }
+
+    public function setIdUser(string $idUser): self
+    {
+        $this->idUser = $idUser;
+
+        return $this;
     }
 
     public function getDepart(): ?string

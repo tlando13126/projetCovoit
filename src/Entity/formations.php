@@ -13,6 +13,8 @@ class Formations
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
+     * @ORM\OneToMany(targetEntity="App\Entity\filieres", inversedBy="formations")
+     * @ORM\OneToMany(targetEntity="App\Entity\SemaineFormation", inversedBy="formations")
      */
     private $id;
 
