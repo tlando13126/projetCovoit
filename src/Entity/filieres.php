@@ -21,6 +21,11 @@ class Filieres
      */
     private $nom;
 
+    /**
+     * @ORM/OneToMany(targetEntity="App\Entity\Utilisateurs", inversedBy="filieres")
+     */
+    private $nomUser;
+
     public function getId(): ?int
     {
         return $this->id;

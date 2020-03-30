@@ -18,6 +18,7 @@ class Utilisateurs
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="App\Entity\filieres", mappedBy="Utilisateurs")
      */
     private $nom;
 
