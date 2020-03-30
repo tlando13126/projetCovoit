@@ -13,7 +13,7 @@ class Filieres
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @ORM\ManyToOne(targetEntity="App\Entity\formations", mappedBy="filieres")
+     * @ORM\ManyToOne(targetEntity="App\Entity\formations", inversedBy="filieres")
      */
     private $id;
 
