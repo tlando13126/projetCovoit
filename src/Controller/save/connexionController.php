@@ -24,13 +24,6 @@ class connexionController extends AbstractController
         // Récupération des données
         // Vérification et validation si valeurs correctes
 
-        if ($email == "erfer@eferfe.fr" && $password == "123") {
-            $cheminControllerDeconnexion = "deconnexion";
-            return $this->render('pages/trajets.html.twig', ['deconnexionController' => $cheminControllerDeconnexion]);
-        } else {
-            $cheminControllerConnexion = "connexion";
-            return $this->render('pages/index.html.twig', ['connexionController' => $cheminControllerConnexion]);
-        }
-
+        return $this->render('pages/trajets.html.twig', ['password' => $password, 'email' => $email]);
     }
 }

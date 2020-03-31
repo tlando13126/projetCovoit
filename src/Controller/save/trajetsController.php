@@ -13,6 +13,11 @@ class trajetsController extends AbstractController {
      */
 
     function trajets() {
+        if (extension_loaded('PDO')) {
+            $etatPDO = 'PDO OK';
+        } else {
+            $etatPDO = 'PDO KO';
+        }
 
         return $this->render('pages/trajets.html.twig');
         
