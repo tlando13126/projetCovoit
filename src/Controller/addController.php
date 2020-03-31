@@ -13,9 +13,6 @@ class addController extends AbstractController
      */
     function add()
     {
-        // Appel de la base de données pour la connexion
-        // Récupération des données
-        // Vérification et validation si valeurs correctes
         return $this->render('pages/trajets.html.twig');
     }
 }

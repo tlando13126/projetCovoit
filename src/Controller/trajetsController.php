@@ -13,9 +13,8 @@ class trajetsController extends AbstractController {
      */
 
     function trajets() {
-
-        return $this->render('pages/trajets.html.twig');
-        
+        $cheminControllerDeconnexion = "deconnexion";
+        return $this->render('pages/trajets.html.twig', ['deconnexionController' => $cheminControllerDeconnexion]);
     }
 
 }
