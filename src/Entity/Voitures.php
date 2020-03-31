@@ -36,6 +36,16 @@ class Voitures
      */
     private $nbPlaces;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Utilisateurs", cascade={"persist", "remove"})
+     */
+    private $proprietaire;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $immatriculation;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -85,6 +95,30 @@ class Voitures
     public function setNbPlaces(int $nbPlaces): self
     {
         $this->nbPlaces = $nbPlaces;
+
+        return $this;
+    }
+
+    public function getProprietaire(): ?Utilisateurs
+    {
+        return $this->proprietaire;
+    }
+
+    public function setProprietaire(?Utilisateurs $proprietaire): self
+    {
+        $this->proprietaire = $proprietaire;
+
+        return $this;
+    }
+
+    public function getImmatriculation(): ?string
+    {
+        return $this->immatriculation;
+    }
+
+    public function setImmatriculation(string $immatriculation): self
+    {
+        $this->immatriculation = $immatriculation;
 
         return $this;
     }

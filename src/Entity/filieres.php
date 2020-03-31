@@ -13,7 +13,6 @@ class Filieres
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @ORM\ManyToOne(targetEntity="App\Entity\formations", inversedBy="filieres")
      */
     private $id;
 
@@ -23,9 +22,9 @@ class Filieres
     private $nom;
 
     /**
-     * @ORM/OneToMany(targetEntity="App\Entity\Utilisateurs", inversedBy="filieres")
+     * @ORM\ManyToOne(targetEntity="App\Entity\Formations")
      */
-    private $nomUser;
+    private $formation;
 
     public function getId(): ?int
     {
@@ -44,17 +43,15 @@ class Filieres
         return $this;
     }
 
-    public function getNomUser(): ?string
+    public function getFormation(): ?Formations
     {
-        return $this->nomUser;
+        return $this->formation;
     }
 
-    public function setNomUser(string $nomUser): self
+    public function setFormation(?Formations $formation): self
     {
-        $this->nomUser = $nomUser;
+        $this->formation = $formation;
 
         return $this;
     }
 }
-
-

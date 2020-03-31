@@ -26,21 +26,14 @@ class UtilisateursTrajets
      */
     private $arrivee;
 
+    /**
+     * @ORM\OneToOne(targetEntity="App\Entity\Utilisateurs", cascade={"persist", "remove"})
+     */
+    private $utilisateur;
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getIdUsert(): ?string
-    {
-        return $this->idUser;
-    }
-
-    public function setIdUser(string $idUser): self
-    {
-        $this->idUser = $idUser;
-
-        return $this;
     }
 
     public function getDepart(): ?string
@@ -63,6 +56,18 @@ class UtilisateursTrajets
     public function setArrivee(string $arrivee): self
     {
         $this->arrivee = $arrivee;
+
+        return $this;
+    }
+
+    public function getUtilisateur(): ?Utilisateurs
+    {
+        return $this->utilisateur;
+    }
+
+    public function setUtilisateur(?Utilisateurs $utilisateur): self
+    {
+        $this->utilisateur = $utilisateur;
 
         return $this;
     }

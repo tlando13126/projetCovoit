@@ -18,7 +18,6 @@ class Utilisateurs
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @ORM\ManyToOne(targetEntity="App\Entity\filieres", mappedBy="Utilisateurs")
      */
     private $nom;
 
@@ -40,6 +39,16 @@ class Utilisateurs
     /**
      * @ORM\Column(type="string", length=255)
      */
+    private $cp;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $ville;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
     private $mdp;
 
     /**
@@ -51,6 +60,16 @@ class Utilisateurs
      * @ORM\Column(type="string", length=255)
      */
     private $tel;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Filieres")
+     */
+    private $filiere;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Formations")
+     */
+    private $formation;
 
     public function getId(): ?int
     {
@@ -105,6 +124,30 @@ class Utilisateurs
         return $this;
     }
 
+    public function getCp(): ?string
+    {
+        return $this->cp;
+    }
+
+    public function setCp(string $cp): self
+    {
+        $this->cp = $cp;
+
+        return $this;
+    }
+
+    public function getVille(): ?string
+    {
+        return $this->ville;
+    }
+
+    public function setVille(string $ville): self
+    {
+        $this->ville = $ville;
+
+        return $this;
+    }
+
     public function getMdp(): ?string
     {
         return $this->mdp;
@@ -137,6 +180,30 @@ class Utilisateurs
     public function setTel(string $tel): self
     {
         $this->tel = $tel;
+
+        return $this;
+    }
+
+    public function getFiliere(): ?Filieres
+    {
+        return $this->filiere;
+    }
+
+    public function setFiliere(?Filieres $filiere): self
+    {
+        $this->filiere = $filiere;
+
+        return $this;
+    }
+
+    public function getFormation(): ?Formations
+    {
+        return $this->formation;
+    }
+
+    public function setFormation(?Formations $formation): self
+    {
+        $this->formation = $formation;
 
         return $this;
     }

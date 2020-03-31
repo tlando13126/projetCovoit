@@ -13,29 +13,27 @@ class Formations
      * @ORM\Id()
      * @ORM\GeneratedValue()
      * @ORM\Column(type="integer")
-     * @ORM\OneToMany(targetEntity="App\Entity\filieres", inversedBy="formations")
-     * @ORM\OneToMany(targetEntity="App\Entity\SemaineFormation", inversedBy="formations")
      */
     private $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $nom;
+    private $nom_formation;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getNom(): ?string
+    public function getNomFormation(): ?string
     {
-        return $this->nom;
+        return $this->nom_formation;
     }
 
-    public function setNom(string $nom): self
+    public function setNomFormation(string $nom_formation): self
     {
-        $this->nom = $nom;
+        $this->nom_formation = $nom_formation;
 
         return $this;
     }

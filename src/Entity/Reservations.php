@@ -17,12 +17,6 @@ class Reservations
     private $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="App\Entity\Voitures", inversedBy="Reservations")
-     * @ORM\Column(type="integer")
-     */
-    private $idVoiture;
-
-    /**
      * @ORM\Column(type="datetime")
      */
     private $dateDebut;
@@ -32,21 +26,15 @@ class Reservations
      */
     private $dateFin;
 
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Voitures")
+     */
+    private $voiture;
+
     public function getId(): ?int
     {
         return $this->id;
-    }
-
-    public function getIdVoiture(): ?\DateTimeInterface
-    {
-        return $this->idVoiture;
-    }
-
-    public function setIdVoiture(\DateTimeInterface $idVoiture): self
-    {
-        $this->idVoiture = $idVoiture;
-
-        return $this;
     }
 
     public function getDateDebut(): ?\DateTimeInterface
@@ -69,6 +57,18 @@ class Reservations
     public function setDateFin(\DateTimeInterface $dateFin): self
     {
         $this->dateFin = $dateFin;
+
+        return $this;
+    }
+
+    public function getVoiture(): ?Voitures
+    {
+        return $this->voiture;
+    }
+
+    public function setVoiture(?Voitures $voiture): self
+    {
+        $this->voiture = $voiture;
 
         return $this;
     }
