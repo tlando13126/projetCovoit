@@ -5,7 +5,12 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+<<<<<<< Updated upstream
  * @ORM\Entity(repositoryClass="App\Repository\SemaineFormationRepository")
+=======
+ * @ORM\Entity()
+ * @ORM\Table(name="SemaineFormation")
+>>>>>>> Stashed changes
  */
 class SemaineFormation
 {
